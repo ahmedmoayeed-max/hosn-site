@@ -124,7 +124,9 @@
       background:linear-gradient(135deg, rgba(25,192,255,.30), rgba(0,230,167,.18));
       border:1px solid rgba(255,255,255,.16);
       box-shadow:0 10px 30px rgba(0,0,0,.25);
+      overflow:hidden;
     }
+    .logo img{width:100%;height:100%;object-fit:contain;padding:8px;display:none}
     .brand h1{margin:0;font-size:16px;line-height:1;font-weight:900}
     .brand .tag{margin-top:2px;font-size:12px;color:var(--muted);font-weight:800}
     .nav-links{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
@@ -195,6 +197,86 @@
       padding:10px 12px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
       color:rgba(255,255,255,.78);font-weight:900;display:inline-flex;gap:8px;align-items:center
     }
+
+    /* ====== PROJECTS SLIDER ====== */
+    .slider{
+      position:relative;
+      overflow:hidden;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+    }
+    .slides{
+      display:flex;
+      transition:transform .45s ease;
+      will-change:transform;
+    }
+    .slide{
+      min-width:100%;
+      position:relative;
+    }
+    .slide img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      display:block;
+      filter:saturate(1.05) contrast(1.03);
+    }
+    .slide .cap{
+      position:absolute;
+      inset:auto 0 0 0;
+      padding:14px;
+      background:linear-gradient(180deg,transparent,rgba(0,0,0,.65));
+    }
+    .slide .cap b{display:block;font-size:18px}
+    .slide .cap span{color:rgba(255,255,255,.78);font-weight:800;font-size:13px}
+    .snav{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      pointer-events:none;
+      padding:12px;
+    }
+    .sbtn{
+      pointer-events:auto;
+      width:46px;height:46px;border-radius:16px;
+      display:grid;place-items:center;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.08);
+      cursor:pointer;font-weight:900;
+    }
+    .dots{
+      position:absolute;
+      bottom:12px;
+      left:12px;
+      display:flex;
+      gap:8px;
+    }
+    .dot2{
+      width:10px;height:10px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.28);
+      background:rgba(255,255,255,.10);
+      cursor:pointer;
+    }
+    .dot2.active{
+      background:linear-gradient(90deg, rgba(25,192,255,.95), rgba(0,230,167,.92));
+      border:none;
+    }
+    .kpis{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-top:12px;
+    }
+    .kpi{
+      padding:14px;border-radius:18px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+    }
+    .kpi b{display:block;font-size:18px}
+    .kpi span{color:var(--muted);font-weight:800}
 
     /* Gallery */
     .filters{display:flex;gap:8px;flex-wrap:wrap}
@@ -324,6 +406,7 @@
       .modal-img{height:320px}
       .logos{grid-template-columns:repeat(3,1fr)}
       .steps{grid-template-columns:repeat(2,1fr)}
+      .kpis{grid-template-columns:repeat(2,1fr)}
     }
     @media (max-width:560px){
       .hero h2{font-size:32px}
@@ -332,6 +415,8 @@
       .form{grid-template-columns:1fr}
       .logos{grid-template-columns:repeat(2,1fr)}
       .steps{grid-template-columns:1fr}
+      .slide img{height:260px}
+      .kpis{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -344,8 +429,8 @@
       <div class="nav-inner">
         <div class="brand">
           <div class="logo" aria-hidden="true" title="Hosn Tech">
-            <!-- place logo image later if you upload it -->
-            <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
+            <img id="brandLogoImg" alt="Hosn Tech Logo">
+            <svg id="brandLogoSvg" viewBox="0 0 24 24" fill="none" width="26" height="26">
               <path d="M12 2l8 4v6c0 5-3.2 9.4-8 10-4.8-.6-8-5-8-10V6l8-4z" stroke="rgba(255,255,255,.9)" stroke-width="1.6"/>
               <path d="M8.7 12.2l2 2 4.8-4.8" stroke="rgba(255,255,255,.9)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -359,6 +444,7 @@
         <div class="nav-links">
           <a class="pill" href="#services" data-i18n="nav_services">الخدمات</a>
           <a class="pill" href="#solutions" data-i18n="nav_solutions">الحلول</a>
+          <a class="pill" href="#featured" data-i18n="nav_featured">المميزة</a>
           <a class="pill" href="#projects" data-i18n="nav_projects">الأعمال</a>
           <a class="pill" href="#trust" data-i18n="nav_trust">لماذا نحن</a>
           <a class="pill" href="#pricing" data-i18n="nav_pricing">الباقات</a>
@@ -530,6 +616,47 @@
         <div class="logo-box">SPECTRA</div>
         <div class="logo-box">BAYT</div>
         <div class="logo-box">BAGHDAD</div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS (SLIDER) -->
+    <section class="section" id="featured">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title" data-i18n="featured_t">مشاريع مميزة</h3>
+          <p class="section-sub" data-i18n="featured_d">عرض سريع بشكل شركة عالمية — ونبدّل الصور لاحقاً بصور شغلكم الحقيقي.</p>
+        </div>
+        <span class="pill">CCTV • Alarm • Network • Smart</span>
+      </div>
+
+      <div class="slider" id="slider">
+        <div class="slides" id="slides">
+          <div class="slide">
+            <img src="https://picsum.photos/seed/hosn-feature-1/1400/900" alt="CCTV Project">
+            <div class="cap"><b data-i18n="f1t">تغطية كاميرات خارجية 360°</b><span data-i18n="f1d">توزيع نقاط + رؤية ليلية + تطبيق</span></div>
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/seed/hosn-feature-2/1400/900" alt="Alarm Project">
+            <div class="cap"><b data-i18n="f2t">إنذار وحساسات للمنازل</b><span data-i18n="f2d">حركة/أبواب/نوافذ + تنبيه فوري</span></div>
+          </div>
+          <div class="slide">
+            <img src="https://picsum.photos/seed/hosn-feature-3/1400/900" alt="Network Project">
+            <div class="cap"><b data-i18n="f3t">شبكات وتنظيم راك للشركات</b><span data-i18n="f3d">سويتش/توزيع/تحسين Wi-Fi</span></div>
+          </div>
+        </div>
+
+        <div class="snav">
+          <button class="sbtn" id="prev" aria-label="Prev">‹</button>
+          <button class="sbtn" id="next" aria-label="Next">›</button>
+        </div>
+        <div class="dots" id="dots"></div>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi"><b data-i18n="k1t">تصميم تغطية</b><span data-i18n="k1d">تقليل النقاط العمياء</span></div>
+        <div class="kpi"><b data-i18n="k2t">تسليك نظيف</b><span data-i18n="k2d">تنفيذ مرتب واحترافي</span></div>
+        <div class="kpi"><b data-i18n="k3t">ضبط أمان</b><span data-i18n="k3d">كلمات مرور + صلاحيات</span></div>
+        <div class="kpi"><b data-i18n="k4t">تسليم كامل</b><span data-i18n="k4d">شرح + إعداد تنبيهات</span></div>
       </div>
     </section>
 
@@ -793,7 +920,10 @@
   <script>
     const WHATSAPP_NUMBER = "9647880200999";
 
-    // Gallery items (stable images)
+    // If you upload your logo to the repo (example: assets/logo.png) put the path here:
+    const BRAND_LOGO_PATH = ""; // e.g. "assets/logo.png"
+
+    // ====== Gallery items (stable images) ======
     const items = [
       {cat:"cctv",   t:"تركيب كاميرات خارجية",  tag:"CCTV",        img:"https://picsum.photos/seed/hosn-cctv-1/1200/800"},
       {cat:"cctv",   t:"غرفة مراقبة احترافية",  tag:"Control",     img:"https://picsum.photos/seed/hosn-cctv-2/1200/800"},
@@ -811,12 +941,33 @@
 
     function waLink(text){ return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`; }
 
-    // WhatsApp links
+    // ===== WhatsApp links =====
     document.getElementById("waTop").href   = waLink("السلام عليكم، أريد استفسار/عرض سعر من حصن التقنية.");
     document.getElementById("waFloat").href = waLink("السلام عليكم، أريد عرض سعر من حصن التقنية.");
     document.getElementById("waTrust").href = waLink("السلام عليكم، أريد تسعير سريع + موعد تقييم داخل بغداد.");
 
-    // Filters
+    // ===== Year =====
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ===== Back to top =====
+    const toTop = document.getElementById("toTop");
+    window.addEventListener("scroll", ()=>{
+      if(window.scrollY > 500) toTop.classList.add("show");
+      else toTop.classList.remove("show");
+    });
+    toTop.addEventListener("click", ()=> window.scrollTo({top:0, behavior:"smooth"}));
+
+    // ===== Logo handling =====
+    (function(){
+      if(!BRAND_LOGO_PATH) return;
+      const img = document.getElementById("brandLogoImg");
+      const svg = document.getElementById("brandLogoSvg");
+      img.src = BRAND_LOGO_PATH;
+      img.onload = ()=>{ img.style.display="block"; if(svg) svg.style.display="none"; };
+      img.onerror = ()=>{ /* keep svg */ };
+    })();
+
+    // ===== Filters =====
     function renderFilters(){
       const box = document.getElementById("filters");
       box.innerHTML = "";
@@ -832,7 +983,7 @@
       });
     }
 
-    // Gallery
+    // ===== Gallery =====
     function renderGallery(){
       const g = document.getElementById("gallery");
       g.innerHTML = "";
@@ -857,13 +1008,14 @@
       });
     }
 
-    // Modal
+    // ===== Modal =====
     const modal = document.getElementById("modal");
     const modalImg = document.getElementById("modalImg");
     const modalTitle = document.getElementById("modalTitle");
     const modalTag = document.getElementById("modalTag");
     document.getElementById("modalClose").onclick = ()=> modal.classList.remove("open");
     modal.addEventListener("click",(e)=>{ if(e.target===modal) modal.classList.remove("open"); });
+
     function openModal(img, title, tag){
       modalImg.src = img;
       modalTitle.textContent = title;
@@ -871,12 +1023,12 @@
       modal.classList.add("open");
     }
 
-    // FAQ accordion
+    // ===== FAQ accordion =====
     document.querySelectorAll(".faq-item").forEach(item=>{
       item.querySelector(".faq-q").addEventListener("click", ()=> item.classList.toggle("open"));
     });
 
-    // Counter animation
+    // ===== Counter animation =====
     function animateCounters(){
       document.querySelectorAll(".count").forEach(el=>{
         const target = parseInt(el.getAttribute("data-count"),10) || 0;
@@ -890,25 +1042,91 @@
       });
     }
 
-    // Contact WhatsApp send
+    // ===== Contact WhatsApp send =====
     document.getElementById("sendWa").addEventListener("click", ()=>{
       const name = document.getElementById("name").value.trim();
       const phone = document.getElementById("phone").value.trim();
       const service = document.getElementById("service").value;
       const area = document.getElementById("area").value;
       const details = document.getElementById("details").value.trim();
+
       const msg = isEN
         ? `Hello 🌟\nName: ${name||"-"}\nPhone: ${phone||"-"}\nService: ${service}\nArea: ${area}\nDetails: ${details||"-"}\n\nI'd like a quote / site assessment.`
         : `السلام عليكم 🌟\nالاسم: ${name||"—"}\nالرقم: ${phone||"—"}\nالخدمة: ${service}\nالمنطقة: ${area}\nتفاصيل: ${details||"—"}\n\nأريد عرض سعر / موعد تقييم.`;
+
       window.open(waLink(msg), "_blank");
     });
 
-    // Language
+    // ===== Slider =====
+    (function(){
+      const slider = document.getElementById("slider");
+      if(!slider) return;
+
+      const slides = document.getElementById("slides");
+      const total = slides.children.length;
+      const dotsBox = document.getElementById("dots");
+      const prev = document.getElementById("prev");
+      const next = document.getElementById("next");
+      let i = 0;
+      let timer = null;
+
+      function buildDots(){
+        dotsBox.innerHTML = "";
+        for(let k=0;k<total;k++){
+          const d = document.createElement("button");
+          d.className = "dot2" + (k===i ? " active" : "");
+          d.onclick = ()=>{ i=k; render(); restart(); };
+          dotsBox.appendChild(d);
+        }
+      }
+
+      function render(){
+        // rtl: move opposite direction
+        const rtl = document.documentElement.dir === "rtl";
+        slides.style.transform = `translateX(${rtl ? (i*100) : (-i*100)}%)`;
+        [...dotsBox.children].forEach((d,idx)=> d.classList.toggle("active", idx===i));
+      }
+
+      function go(n){
+        i = (n + total) % total;
+        render();
+        restart();
+      }
+
+      function restart(){
+        if(timer) clearInterval(timer);
+        timer = setInterval(()=> go(i+1), 4500);
+      }
+
+      prev.onclick = ()=> go(i-1);
+      next.onclick = ()=> go(i+1);
+
+      // touch swipe
+      let x0=null;
+      slider.addEventListener("touchstart",(e)=>{ x0=e.touches[0].clientX; },{passive:true});
+      slider.addEventListener("touchend",(e)=>{
+        if(x0===null) return;
+        const x1 = e.changedTouches[0].clientX;
+        const dx = x1-x0;
+        const rtl = document.documentElement.dir === "rtl";
+        if(Math.abs(dx) > 40){
+          if(dx > 0) (rtl ? go(i+1) : go(i-1));
+          else (rtl ? go(i-1) : go(i+1));
+        }
+        x0=null;
+      },{passive:true});
+
+      buildDots();
+      render();
+      restart();
+    })();
+
+    // ===== Language =====
     const dict = {
       ar:{
         brand:"حصن التقنية",
         tagline:"أنظمة أمنية • كاميرات • إنذار • شبكات • بغداد",
-        nav_services:"الخدمات", nav_solutions:"الحلول", nav_projects:"الأعمال", nav_trust:"لماذا نحن",
+        nav_services:"الخدمات", nav_solutions:"الحلول", nav_featured:"المميزة", nav_projects:"الأعمال", nav_trust:"لماذا نحن",
         nav_pricing:"الباقات", nav_faq:"أسئلة", nav_contact:"تواصل",
         facebook:"فيسبوك", whatsapp:"واتساب", call:"اتصال",
         chip1:"تنفيذ احترافي", chip2:"ربط مباشر بالموبايل", chip3:"دعم مستمر", chip4:"داخل بغداد",
@@ -929,6 +1147,14 @@
         solB_t:"أمان وخصوصية", solB_d:"ضبط كلمات مرور، صلاحيات، وتحديثات أساسية لتقليل الاختراقات.",
         solC_t:"حلول استقرار", solC_d:"خيارات PoE/UPS حسب الحاجة لتقليل الانقطاع وتحسين الاستمرارية.",
         clients_t:"عملاؤنا", clients_d:"شعارات تجريبية مؤقتاً — نستبدلها لاحقاً.",
+        featured_t:"مشاريع مميزة", featured_d:"عرض سريع بشكل شركة عالمية — ونبدّل الصور لاحقاً بصور شغلكم الحقيقي.",
+        f1t:"تغطية كاميرات خارجية 360°", f1d:"توزيع نقاط + رؤية ليلية + تطبيق",
+        f2t:"إنذار وحساسات للمنازل", f2d:"حركة/أبواب/نوافذ + تنبيه فوري",
+        f3t:"شبكات وتنظيم راك للشركات", f3d:"سويتش/توزيع/تحسين Wi-Fi",
+        k1t:"تصميم تغطية", k1d:"تقليل النقاط العمياء",
+        k2t:"تسليك نظيف", k2d:"تنفيذ مرتب واحترافي",
+        k3t:"ضبط أمان", k3d:"كلمات مرور + صلاحيات",
+        k4t:"تسليم كامل", k4d:"شرح + إعداد تنبيهات",
         projects_title:"معرض الأعمال", projects_sub:"صور توضيحية مؤقتاً — نستبدلها بصور مشاريعكم لاحقاً.",
         case_title:"دراسات حالة", case_sub:"نصوص احترافية تزيد الثقة — نحدّثها بأرقام حقيقية لاحقاً.",
         c1_t:"محل تجاري — تغطية كاملة", c1_d:"توزيع نقاط + ضبط تسجيل + ربط هاتف + تنبيه حركة. النتيجة: مراقبة واضحة وتقليل ثغرات.",
@@ -964,7 +1190,7 @@
       en:{
         brand:"Hosn Tech",
         tagline:"Security • CCTV • Alarm • Networks • Baghdad",
-        nav_services:"Services", nav_solutions:"Solutions", nav_projects:"Work", nav_trust:"Why Us",
+        nav_services:"Services", nav_solutions:"Solutions", nav_featured:"Featured", nav_projects:"Work", nav_trust:"Why Us",
         nav_pricing:"Packages", nav_faq:"FAQ", nav_contact:"Contact",
         facebook:"Facebook", whatsapp:"WhatsApp", call:"Call",
         chip1:"Professional delivery", chip2:"Mobile access", chip3:"Ongoing support", chip4:"Baghdad",
@@ -985,6 +1211,14 @@
         solB_t:"Security & privacy", solB_d:"Passwords, permissions, and basic hardening to reduce risks.",
         solC_t:"Stability upgrades", solC_d:"PoE/UPS options to reduce downtime and improve reliability.",
         clients_t:"Clients", clients_d:"Temporary placeholders — replace with real logos later.",
+        featured_t:"Featured Projects", featured_d:"Enterprise-style showcase — replace with your real work photos later.",
+        f1t:"360° Outdoor CCTV Coverage", f1d:"Layout + night vision + mobile app",
+        f2t:"Smart Alarm & Sensors", f2d:"Motion/doors/windows + instant alerts",
+        f3t:"Business Networks & Rack", f3d:"Switching/distribution/Wi-Fi improvement",
+        k1t:"Coverage Design", k1d:"Reduce blind spots",
+        k2t:"Clean Wiring", k2d:"Neat professional install",
+        k3t:"Security Setup", k3d:"Passwords + permissions",
+        k4t:"Full Handover", k4d:"Walkthrough + alerts",
         projects_title:"Portfolio", projects_sub:"Temporary images — replace with your real project photos later.",
         case_title:"Case Studies", case_sub:"Trust-building templates — replace with real numbers later.",
         c1_t:"Retail — Full coverage", c1_d:"Layout + recording + mobile access + motion alerts. Result: fewer gaps.",
@@ -1028,91 +1262,18 @@
       document.documentElement.lang = isEN ? "en" : "ar";
       document.documentElement.dir  = isEN ? "ltr" : "rtl";
       document.getElementById("langText").textContent = isEN ? "AR" : "EN";
+
+      // refresh galleries + slider position for direction changes
       renderFilters();
       renderGallery();
     }
-    document.getElementById("langBtn").addEventListener("click", ()=>{ isEN=!isEN; applyLang(); });
 
-    // year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // to top
-    const toTop = document.getElementById("toTop");
-    window.addEventListener("scroll", ()=>{
-      if(window.scrollY > 500) toTop.classList.add("show");
-      else toTop.classList.remove("show");
+    document.getElementById("langBtn").addEventListener("click", ()=>{
+      isEN = !isEN;
+      applyLang();
+      // re-render slider position after dir change
+      if(window.__hosnSliderRender) window.__hosnSliderRender();
     });
-    toTop.addEventListener("click", ()=> window.scrollTo({top:0, behavior:"smooth"}));
-
-    // init gallery
-    function renderFilters(){ /* placeholder to be overwritten below */ }
-    function renderGallery(){ /* placeholder to be overwritten below */ }
-
-    // create filters / gallery (depend on isEN)
-    renderFilters = function(){
-      const box = document.getElementById("filters");
-      box.innerHTML="";
-      const names = isEN
-        ? [["all","All"],["cctv","CCTV"],["alarm","Alarm"],["network","Network"],["smart","Smart Home"]]
-        : [["all","الكل"],["cctv","كاميرات"],["alarm","إنذار"],["network","شبكات"],["smart","منزل ذكي"]];
-      names.forEach(([id,label])=>{
-        const b=document.createElement("button");
-        b.className="filter"+(active===id?" active":"");
-        b.textContent=label;
-        b.onclick=()=>{active=id;renderFilters();renderGallery();};
-        box.appendChild(b);
-      });
-    }
-
-    renderGallery = function(){
-      const g=document.getElementById("gallery");
-      g.innerHTML="";
-      items.filter(it=>active==="all"||it.cat===active).forEach(it=>{
-        const d=document.createElement("div");
-        d.className="work";
-        const title = isEN
-          ? (it.cat==="cctv"?"CCTV Project":it.cat==="alarm"?"Alarm Project":it.cat==="network"?"Network Project":"Smart Home Project")
-          : it.t;
-        d.innerHTML=`
-          <img loading="lazy" src="${it.img}" alt="${title}">
-          <div class="overlay">
-            <div class="label">
-              <b>${title}</b>
-              <span>${it.tag}</span>
-            </div>
-          </div>`;
-        d.onclick=()=>openModal(it.img,title,it.tag);
-        g.appendChild(d);
-      });
-    }
-
-    // modal helpers
-    function openModal(img,title,tag){
-      modalImg.src=img; modalTitle.textContent=title; modalTag.textContent=tag;
-      modal.classList.add("open");
-    }
-
-    // modal
-    const modal=document.getElementById("modal");
-    const modalImg=document.getElementById("modalImg");
-    const modalTitle=document.getElementById("modalTitle");
-    const modalTag=document.getElementById("modalTag");
-    document.getElementById("modalClose").onclick=()=>modal.classList.remove("open");
-    modal.addEventListener("click",(e)=>{ if(e.target===modal) modal.classList.remove("open"); });
-
-    // counters
-    function animateCounters(){
-      document.querySelectorAll(".count").forEach(el=>{
-        const target=parseInt(el.getAttribute("data-count"),10)||0;
-        let cur=0;
-        const step=Math.max(1,Math.floor(target/60));
-        const timer=setInterval(()=>{
-          cur+=step;
-          if(cur>=target){cur=target;clearInterval(timer);}
-          el.textContent=cur;
-        },18);
-      });
-    }
 
     // init
     renderFilters();
