@@ -11,7 +11,7 @@
   <meta property="og:title" content="حصن التقنية | أنظمة أمنية وكاميرات مراقبة في بغداد" />
   <meta property="og:description" content="كاميرات، إنذار، شبكات، منزل ذكي — تنفيذ احترافي داخل بغداد." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://picsum.photos/seed/hosn-og/1200/630" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1557597774-9d3b4d571bde?auto=format&fit=crop&w=1200&q=70" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -160,7 +160,6 @@
       background:rgba(255,255,255,.06);
     }
     .hero-visual img{height:220px;width:100%;object-fit:cover}
-
     .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .stat{padding:14px;display:flex;flex-direction:column;gap:6px;justify-content:center}
     .stat .n{font-size:26px;font-weight:900}
@@ -171,7 +170,6 @@
     .section-header{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:12px}
     .section-title{margin:0;font-size:22px;font-weight:900}
     .section-sub{margin:0;color:var(--muted);font-weight:800;line-height:1.8}
-
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
@@ -198,7 +196,7 @@
       color:rgba(255,255,255,.78);font-weight:900;display:inline-flex;gap:8px;align-items:center
     }
 
-    /* ====== PROJECTS SLIDER ====== */
+    /* Featured slider */
     .slider{
       position:relative;
       overflow:hidden;
@@ -206,98 +204,31 @@
       border:1px solid rgba(255,255,255,.14);
       background:rgba(255,255,255,.06);
     }
-    .slides{
-      display:flex;
-      transition:transform .45s ease;
-      will-change:transform;
-    }
-    .slide{
-      min-width:100%;
-      position:relative;
-    }
-    .slide img{
-      width:100%;
-      height:320px;
-      object-fit:cover;
-      display:block;
-      filter:saturate(1.05) contrast(1.03);
-    }
-    .slide .cap{
-      position:absolute;
-      inset:auto 0 0 0;
-      padding:14px;
-      background:linear-gradient(180deg,transparent,rgba(0,0,0,.65));
-    }
+    .slides{display:flex;transition:transform .45s ease;will-change:transform}
+    .slide{min-width:100%;position:relative}
+    .slide img{width:100%;height:320px;object-fit:cover;display:block;filter:saturate(1.05) contrast(1.03)}
+    .slide .cap{position:absolute;inset:auto 0 0 0;padding:14px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.65))}
     .slide .cap b{display:block;font-size:18px}
     .slide .cap span{color:rgba(255,255,255,.78);font-weight:800;font-size:13px}
-    .snav{
-      position:absolute;
-      inset:0;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      pointer-events:none;
-      padding:12px;
-    }
-    .sbtn{
-      pointer-events:auto;
-      width:46px;height:46px;border-radius:16px;
-      display:grid;place-items:center;
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(255,255,255,.08);
-      cursor:pointer;font-weight:900;
-    }
-    .dots{
-      position:absolute;
-      bottom:12px;
-      left:12px;
-      display:flex;
-      gap:8px;
-    }
-    .dot2{
-      width:10px;height:10px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.28);
-      background:rgba(255,255,255,.10);
-      cursor:pointer;
-    }
-    .dot2.active{
-      background:linear-gradient(90deg, rgba(25,192,255,.95), rgba(0,230,167,.92));
-      border:none;
-    }
-    .kpis{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:12px;
-      margin-top:12px;
-    }
-    .kpi{
-      padding:14px;border-radius:18px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.06);
-    }
+    .snav{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;pointer-events:none;padding:12px}
+    .sbtn{pointer-events:auto;width:46px;height:46px;border-radius:16px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);cursor:pointer;font-weight:900}
+    .dots{position:absolute;bottom:12px;left:12px;display:flex;gap:8px}
+    .dot2{width:10px;height:10px;border-radius:999px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.10);cursor:pointer}
+    .dot2.active{background:linear-gradient(90deg, rgba(25,192,255,.95), rgba(0,230,167,.92));border:none}
+
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+    .kpi{padding:14px;border-radius:18px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06)}
     .kpi b{display:block;font-size:18px}
     .kpi span{color:var(--muted);font-weight:800}
 
     /* Gallery */
     .filters{display:flex;gap:8px;flex-wrap:wrap}
-    .filter{
-      padding:10px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.06);font-weight:900;color:var(--muted);cursor:pointer
-    }
+    .filter{padding:10px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);font-weight:900;color:var(--muted);cursor:pointer}
     .filter.active{background:linear-gradient(90deg, rgba(25,192,255,.25), rgba(0,230,167,.20));color:var(--text)}
     .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .work{
-      position:relative;overflow:hidden;border-radius:18px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.06);
-      cursor:pointer;
-    }
+    .work{position:relative;overflow:hidden;border-radius:18px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);cursor:pointer}
     .work img{width:100%;height:200px;object-fit:cover;filter:saturate(1.05) contrast(1.03)}
-    .work .overlay{
-      position:absolute;inset:0;
-      background:linear-gradient(180deg, transparent 35%, rgba(0,0,0,.55));
-      display:flex;align-items:flex-end;padding:12px;
-    }
+    .work .overlay{position:absolute;inset:0;background:linear-gradient(180deg, transparent 35%, rgba(0,0,0,.55));display:flex;align-items:flex-end;padding:12px}
     .label{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%}
     .label b{font-size:14px}
     .label span{font-size:12px;color:rgba(255,255,255,.78);font-weight:800}
@@ -305,13 +236,7 @@
     /* Modal */
     .modal{position:fixed;inset:0;display:none;background:rgba(0,0,0,.58);z-index:200;align-items:center;justify-content:center;padding:18px}
     .modal.open{display:flex}
-    .modal-box{
-      max-width:920px;width:100%;border-radius:22px;overflow:hidden;
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(8,25,38,.72);
-      backdrop-filter: blur(18px);
-      box-shadow:var(--shadow);
-    }
+    .modal-box{max-width:920px;width:100%;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.16);background:rgba(8,25,38,.72);backdrop-filter: blur(18px);box-shadow:var(--shadow)}
     .modal-img{width:100%;height:440px;object-fit:cover}
     .modal-body{padding:14px 14px 16px}
     .modal-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
@@ -319,10 +244,7 @@
 
     /* Clients */
     .logos{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
-    .logo-box{
-      padding:12px;border-radius:16px;border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.06);text-align:center;font-weight:900;color:rgba(255,255,255,.78)
-    }
+    .logo-box{padding:12px;border-radius:16px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);text-align:center;font-weight:900;color:rgba(255,255,255,.78)}
 
     /* Testimonials */
     .quote{display:flex;flex-direction:column;gap:10px}
@@ -338,12 +260,7 @@
 
     /* Pricing */
     .price{position:relative}
-    .badge{
-      position:absolute;top:12px;left:12px;
-      padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900;
-      background:linear-gradient(90deg, rgba(255,206,90,.95), rgba(25,192,255,.55));
-      color:#0b2233;border:1px solid rgba(255,255,255,.18);
-    }
+    .badge{position:absolute;top:12px;left:12px;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900;background:linear-gradient(90deg, rgba(255,206,90,.95), rgba(25,192,255,.55));color:#0b2233;border:1px solid rgba(255,255,255,.18)}
     .amount{font-size:26px;font-weight:900;margin:8px 0}
     .list{margin:0;padding:0 16px;color:var(--muted);line-height:1.9;font-weight:800}
     .list li{margin:6px 0}
@@ -358,43 +275,20 @@
     /* Contact */
     .form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .full{grid-column:1 / -1}
-    input,select,textarea{
-      width:100%;padding:12px 12px;border-radius:14px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.06);
-      color:var(--text);
-      outline:none;
-      font-family:inherit;
-      font-weight:800;
-    }
+    input,select,textarea{width:100%;padding:12px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:var(--text);outline:none;font-family:inherit;font-weight:800}
     textarea{min-height:110px;resize:vertical}
     input::placeholder,textarea::placeholder{color:rgba(255,255,255,.55);font-weight:800}
 
-    .map{
-      border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.06);
-    }
+    .map{border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06)}
     .map iframe{width:100%;height:260px;border:0}
 
     /* Footer + Float */
     .footer{margin-top:24px;padding:16px;text-align:center;color:rgba(255,255,255,.65);font-weight:800}
     .footer a{color:rgba(155,232,255,.95);text-decoration:underline}
     .float{position:fixed;bottom:16px;right:16px;z-index:80}
-    .float a{
-      border:none;background:linear-gradient(90deg,#1fbf5b,#2fe08a);
-      color:#082015;box-shadow:0 16px 44px rgba(47,224,138,.14);
-      padding:12px 14px;border-radius:18px;display:flex;align-items:center;gap:10px;font-weight:900
-    }
+    .float a{border:none;background:linear-gradient(90deg,#1fbf5b,#2fe08a);color:#082015;box-shadow:0 16px 44px rgba(47,224,138,.14);padding:12px 14px;border-radius:18px;display:flex;align-items:center;gap:10px;font-weight:900}
     .float .ring{width:10px;height:10px;border-radius:999px;background:#2fe08a;box-shadow:0 0 0 7px rgba(47,224,138,.14)}
-    .toTop{
-      position:fixed;bottom:16px;left:16px;z-index:80;
-      width:48px;height:48px;border-radius:18px;
-      display:grid;place-items:center;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.08);
-      cursor:pointer;font-weight:900;
-      opacity:0;pointer-events:none;transition:.2s ease;
-    }
+    .toTop{position:fixed;bottom:16px;left:16px;z-index:80;width:48px;height:48px;border-radius:18px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.08);cursor:pointer;font-weight:900;opacity:0;pointer-events:none;transition:.2s ease}
     .toTop.show{opacity:1;pointer-events:auto}
 
     /* Responsive */
@@ -462,7 +356,7 @@
     </div>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" id="top">
       <div class="hero-card glass">
         <div class="hero-content">
           <div class="chips">
@@ -498,7 +392,10 @@
 
       <div class="hero-side glass">
         <div class="hero-visual">
-          <img loading="lazy" src="https://picsum.photos/seed/hosn-hero/1200/700" alt="Hosn Tech" />
+          <img loading="lazy" referrerpolicy="no-referrer"
+               src="https://images.unsplash.com/photo-1557597774-9d3b4d571bde?auto=format&fit=crop&w=1400&q=70"
+               alt="Security Control Room"
+               onerror="this.src='https://picsum.photos/seed/hosn-hero/1200/800';">
         </div>
 
         <div class="stats">
@@ -522,18 +419,18 @@
       </div>
     </section>
 
-    <!-- TRUST STRIP -->
-    <section class="section" id="trust">
+    <!-- Trust Strip -->
+    <section class="section">
       <div class="trust glass">
         <div class="left">
-          <span class="mini">🧾 <b data-i18n="trust1">عرض واضح قبل التنفيذ</b></span>
-          <span class="mini">🧰 <b data-i18n="trust2">تسليم: شرح + إعدادات</b></span>
-          <span class="mini">🔐 <b data-i18n="trust3">إعدادات أمان وخصوصية</b></span>
-          <span class="mini">⚡ <b data-i18n="trust4">حلول استقرار (PoE/UPS)</b></span>
+          <span class="mini">🧾 <span data-i18n="mini1">عرض واضح قبل التنفيذ</span></span>
+          <span class="mini">🧰 <span data-i18n="mini2">تسليم: شرح + إعدادات</span></span>
+          <span class="mini">🔒 <span data-i18n="mini3">إعدادات أمان وخصوصية</span></span>
+          <span class="mini">⚡ <span data-i18n="mini4">حلول استقرار (PoE/UPS)</span></span>
         </div>
         <div class="right">
-          <a class="btn whatsapp" target="_blank" rel="noopener" id="waTrust" href="#" data-i18n="wa_quote">اطلب تسعير واتساب</a>
-          <a class="btn" href="#contact" data-i18n="cta_quote2">اطلب عرض سعر</a>
+          <a class="btn primary" href="#contact" data-i18n="mini_cta">اطلب تسعير واتساب</a>
+          <a class="btn" href="#pricing" data-i18n="mini_cta2">شوف الباقات</a>
         </div>
       </div>
     </section>
@@ -601,11 +498,11 @@
     </section>
 
     <!-- CLIENTS -->
-    <section class="section" id="clients">
+    <section class="section" id="trust">
       <div class="section-header">
         <div>
-          <h3 class="section-title" data-i18n="clients_t">عملاؤنا</h3>
-          <p class="section-sub" data-i18n="clients_d">شعارات تجريبية مؤقتاً — نستبدلها لاحقاً.</p>
+          <h3 class="section-title" data-i18n="clients_title">عملاؤنا</h3>
+          <p class="section-sub" data-i18n="clients_sub">شعارات تجريبية مؤقتاً — نستبدلها لاحقاً.</p>
         </div>
       </div>
 
@@ -619,48 +516,34 @@
       </div>
     </section>
 
-    <!-- FEATURED PROJECTS (SLIDER) -->
+    <!-- FEATURED -->
     <section class="section" id="featured">
       <div class="section-header">
         <div>
-          <h3 class="section-title" data-i18n="featured_t">مشاريع مميزة</h3>
-          <p class="section-sub" data-i18n="featured_d">عرض سريع بشكل شركة عالمية — ونبدّل الصور لاحقاً بصور شغلكم الحقيقي.</p>
+          <h3 class="section-title" data-i18n="featured_title">مشاريع مميزة</h3>
+          <p class="section-sub" data-i18n="featured_sub">عرض سريع بشكل شركة عالمية — ونبدّل الصور لاحقاً بصور شغلكم الحقيقي.</p>
         </div>
         <span class="pill">CCTV • Alarm • Network • Smart</span>
       </div>
 
       <div class="slider" id="slider">
-        <div class="slides" id="slides">
-          <div class="slide">
-            <img src="https://picsum.photos/seed/hosn-feature-1/1400/900" alt="CCTV Project">
-            <div class="cap"><b data-i18n="f1t">تغطية كاميرات خارجية 360°</b><span data-i18n="f1d">توزيع نقاط + رؤية ليلية + تطبيق</span></div>
-          </div>
-          <div class="slide">
-            <img src="https://picsum.photos/seed/hosn-feature-2/1400/900" alt="Alarm Project">
-            <div class="cap"><b data-i18n="f2t">إنذار وحساسات للمنازل</b><span data-i18n="f2d">حركة/أبواب/نوافذ + تنبيه فوري</span></div>
-          </div>
-          <div class="slide">
-            <img src="https://picsum.photos/seed/hosn-feature-3/1400/900" alt="Network Project">
-            <div class="cap"><b data-i18n="f3t">شبكات وتنظيم راك للشركات</b><span data-i18n="f3d">سويتش/توزيع/تحسين Wi-Fi</span></div>
-          </div>
-        </div>
-
+        <div class="slides" id="slides"></div>
         <div class="snav">
-          <button class="sbtn" id="prev" aria-label="Prev">‹</button>
-          <button class="sbtn" id="next" aria-label="Next">›</button>
+          <div class="sbtn" id="prevBtn">‹</div>
+          <div class="sbtn" id="nextBtn">›</div>
         </div>
         <div class="dots" id="dots"></div>
       </div>
 
       <div class="kpis">
-        <div class="kpi"><b data-i18n="k1t">تصميم تغطية</b><span data-i18n="k1d">تقليل النقاط العمياء</span></div>
-        <div class="kpi"><b data-i18n="k2t">تسليك نظيف</b><span data-i18n="k2d">تنفيذ مرتب واحترافي</span></div>
-        <div class="kpi"><b data-i18n="k3t">ضبط أمان</b><span data-i18n="k3d">كلمات مرور + صلاحيات</span></div>
-        <div class="kpi"><b data-i18n="k4t">تسليم كامل</b><span data-i18n="k4d">شرح + إعداد تنبيهات</span></div>
+        <div class="kpi"><b data-i18n="k1_t">تصميم تغطية</b><span data-i18n="k1_d">تقليل النقاط العمياء</span></div>
+        <div class="kpi"><b data-i18n="k2_t">تسليك نظيف</b><span data-i18n="k2_d">تنفيذ مرتب واحترافي</span></div>
+        <div class="kpi"><b data-i18n="k3_t">ضبط أمان</b><span data-i18n="k3_d">كلمات مرور + صلاحيات</span></div>
+        <div class="kpi"><b data-i18n="k4_t">تسليم كامل</b><span data-i18n="k4_d">شرح + إعداد تنبيهات</span></div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- PROJECTS / PORTFOLIO -->
     <section class="section" id="projects">
       <div class="section-header">
         <div>
@@ -684,29 +567,38 @@
 
       <div class="grid-3">
         <div class="card glass">
-          <img style="border-radius:16px;border:1px solid rgba(255,255,255,.14);height:160px;object-fit:cover" loading="lazy" src="https://picsum.photos/seed/hosn-case-1/1200/700" alt="Case 1">
-          <div style="height:10px"></div>
-          <h3 data-i18n="c1_t">محل تجاري — تغطية كاملة</h3>
+          <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.14)">
+            <img loading="lazy" referrerpolicy="no-referrer"
+                 src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=70"
+                 alt="Case 1"
+                 onerror="this.src='https://picsum.photos/seed/hosn-case1/1200/800';">
+          </div>
+          <h3 style="margin-top:10px" data-i18n="c1_t">محل تجاري — تغطية كاملة</h3>
           <p data-i18n="c1_d">توزيع نقاط + ضبط تسجيل + ربط هاتف + تنبيه حركة. النتيجة: مراقبة واضحة وتقليل ثغرات.</p>
-          <div style="height:10px"></div>
           <span class="pill">⏱️ <span data-i18n="c_time">مدة التنفيذ:</span> 1-2 يوم</span>
         </div>
 
         <div class="card glass">
-          <img style="border-radius:16px;border:1px solid rgba(255,255,255,.14);height:160px;object-fit:cover" loading="lazy" src="https://picsum.photos/seed/hosn-case-2/1200/700" alt="Case 2">
-          <div style="height:10px"></div>
-          <h3 data-i18n="c2_t">منزل — ربط وتطبيق</h3>
+          <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.14)">
+            <img loading="lazy" referrerpolicy="no-referrer"
+                 src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=70"
+                 alt="Case 2"
+                 onerror="this.src='https://picsum.photos/seed/hosn-case2/1200/800';">
+          </div>
+          <h3 style="margin-top:10px" data-i18n="c2_t">منزل — ربط وتطبيق</h3>
           <p data-i18n="c2_d">كاميرات داخلية وخارجية + إعدادات خصوصية + وصول للعائلة. النتيجة: متابعة سهلة وتنبيهات فورية.</p>
-          <div style="height:10px"></div>
           <span class="pill">📱 <span data-i18n="c_app">تطبيق:</span> iOS/Android</span>
         </div>
 
         <div class="card glass">
-          <img style="border-radius:16px;border:1px solid rgba(255,255,255,.14);height:160px;object-fit:cover" loading="lazy" src="https://picsum.photos/seed/hosn-case-3/1200/700" alt="Case 3">
-          <div style="height:10px"></div>
-          <h3 data-i18n="c3_t">شركة — شبكات وتنظيم</h3>
+          <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.14)">
+            <img loading="lazy" referrerpolicy="no-referrer"
+                 src="https://images.unsplash.com/photo-1581092919535-7146f4f1a0b7?auto=format&fit=crop&w=1200&q=70"
+                 alt="Case 3"
+                 onerror="this.src='https://picsum.photos/seed/hosn-case3/1200/800';">
+          </div>
+          <h3 style="margin-top:10px" data-i18n="c3_t">شركة — شبكات وتنظيم</h3>
           <p data-i18n="c3_d">تنظيم راك + سويتش + توزيع نقاط + تحسين Wi-Fi. النتيجة: استقرار أعلى وتقليل انقطاع.</p>
-          <div style="height:10px"></div>
           <span class="pill">🧰 <span data-i18n="c_deliver">تسليم:</span> مخطط + شرح</span>
         </div>
       </div>
@@ -716,8 +608,8 @@
     <section class="section" id="testimonials">
       <div class="section-header">
         <div>
-          <h3 class="section-title" data-i18n="t_t">آراء العملاء</h3>
-          <p class="section-sub" data-i18n="t_d">نماذج مؤقتة — نستبدلها بتقييمات حقيقية لاحقاً.</p>
+          <h3 class="section-title" data-i18n="t_title">آراء العملاء</h3>
+          <p class="section-sub" data-i18n="t_sub">نماذج مؤقتة — نستبدلها بتقييمات حقيقية لاحقاً.</p>
         </div>
       </div>
 
@@ -725,17 +617,32 @@
         <div class="card glass quote">
           <div class="stars">★★★★★</div>
           <p data-i18n="t1">شغل مرتب وتسليك نظيف، وربطوا التطبيق وشرحوا كلشي. أنصح بيهم.</p>
-          <div class="who"><div class="avatar">A</div><div><b data-i18n="t1n">أبو علي</b><div style="color:rgba(255,255,255,.65);font-weight:800" data-i18n="t1c">بغداد</div></div></div>
+          <div class="who">
+            <div class="avatar">A</div>
+            <div>
+              <b data-i18n="t1n">أبو علي</b><div style="color:var(--muted);font-weight:800" data-i18n="t1c">بغداد</div>
+            </div>
+          </div>
         </div>
         <div class="card glass quote">
           <div class="stars">★★★★★</div>
           <p data-i18n="t2">تنبيه الحركة مضبوط، والكاميرات واضحة بالليل. استجابة سريعة.</p>
-          <div class="who"><div class="avatar">S</div><div><b data-i18n="t2n">سارة</b><div style="color:rgba(255,255,255,.65);font-weight:800" data-i18n="t2c">بغداد</div></div></div>
+          <div class="who">
+            <div class="avatar">S</div>
+            <div>
+              <b data-i18n="t2n">سارة</b><div style="color:var(--muted);font-weight:800" data-i18n="t2c">بغداد</div>
+            </div>
+          </div>
         </div>
         <div class="card glass quote">
           <div class="stars">★★★★★</div>
           <p data-i18n="t3">شبكة الشركة صارت مستقرة، وتنظيم الراكات ممتاز. تسليم احترافي.</p>
-          <div class="who"><div class="avatar">M</div><div><b data-i18n="t3n">م. أحمد</b><div style="color:rgba(255,255,255,.65);font-weight:800" data-i18n="t3c">شركة</div></div></div>
+          <div class="who">
+            <div class="avatar">M</div>
+            <div>
+              <b data-i18n="t3n">م. أحمد</b><div style="color:var(--muted);font-weight:800" data-i18n="t3c">شركة</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -744,16 +651,16 @@
     <section class="section" id="process">
       <div class="section-header">
         <div>
-          <h3 class="section-title" data-i18n="p_t">طريقة شغلنا</h3>
-          <p class="section-sub" data-i18n="p_d">خطوات واضحة مثل الشركات: حتى الزبون يطمن.</p>
+          <h3 class="section-title" data-i18n="p_title">طريقة شغلنا</h3>
+          <p class="section-sub" data-i18n="p_sub">خطوات واضحة مثل الشركات: حتى الزبون يطمن.</p>
         </div>
       </div>
 
       <div class="steps">
-        <div class="step glass"><b data-i18n="p1">1) تقييم الموقع</b><p data-i18n="p1d">نحدد عدد النقاط والزوايا ونقترح أفضل حل.</p></div>
-        <div class="step glass"><b data-i18n="p2">2) عرض سعر واضح</b><p data-i18n="p2d">تفاصيل الأجهزة والتنفيذ والمدة قبل البدء.</p></div>
-        <div class="step glass"><b data-i18n="p3">3) تنفيذ نظيف</b><p data-i18n="p3d">تسليك منظم، تثبيت مضبوط، واختبارات كاملة.</p></div>
-        <div class="step glass"><b data-i18n="p4">4) تسليم ودعم</b><p data-i18n="p4d">شرح التطبيق + تنبيهات + متابعة بعد التركيب.</p></div>
+        <div class="step"><b data-i18n="p1_t">1) تقييم الموقع</b><p data-i18n="p1_d">نحدد عدد النقاط والزوايا ونقترح أفضل حل.</p></div>
+        <div class="step"><b data-i18n="p2_t">2) عرض سعر واضح</b><p data-i18n="p2_d">تفاصيل الأجهزة والتنفيذ والمدة قبل البدء.</p></div>
+        <div class="step"><b data-i18n="p3_t">3) تنفيذ نظيف</b><p data-i18n="p3_d">تسليك منظم، تثبيت مضبوط، واختبارات كاملة.</p></div>
+        <div class="step"><b data-i18n="p4_t">4) تسليم ودعم</b><p data-i18n="p4_d">شرح التطبيق + تنبيهات + متابعة بعد التركيب.</p></div>
       </div>
     </section>
 
@@ -848,14 +755,14 @@
             <input id="name" placeholder="الاسم">
             <input id="phone" placeholder="رقم الهاتف">
             <select id="service">
-              <option>كاميرات مراقبة</option>
-              <option>أنظمة إنذار</option>
-              <option>شبكات واتصالات</option>
-              <option>منزل ذكي</option>
+              <option data-i18n="opt1">كاميرات مراقبة</option>
+              <option data-i18n="opt2">أنظمة إنذار</option>
+              <option data-i18n="opt3">شبكات واتصالات</option>
+              <option data-i18n="opt4">منزل ذكي</option>
             </select>
             <select id="area">
-              <option>داخل بغداد</option>
-              <option>أطراف بغداد</option>
+              <option data-i18n="area1">داخل بغداد</option>
+              <option data-i18n="area2">أطراف بغداد</option>
             </select>
             <textarea class="full" id="details" placeholder="تفاصيل إضافية (عدد الكاميرات، نوع المكان...)"></textarea>
 
@@ -868,17 +775,16 @@
         </div>
 
         <div class="card glass">
-          <h3 style="margin:0 0 10px" data-i18n="map_t">موقع الخدمة</h3>
-          <p style="margin:0 0 12px;color:var(--muted);font-weight:800;line-height:1.9" data-i18n="map_d">
-            نشتغل داخل بغداد. إذا تحب نجي تقييم، أرسل منطقتك على الواتساب.
-          </p>
-          <div class="map">
-            <iframe
-              title="Baghdad Map"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=44.283%2C33.257%2C44.569%2C33.433&layer=mapnik">
-            </iframe>
+          <h3 style="margin-top:0" data-i18n="service_area">موقع الخدمة</h3>
+          <p data-i18n="service_area_d">نشتغل داخل بغداد. إذا تحب نجي تقييم، أرسل منطقتك على الواتساب.</p>
+          <div class="map" style="margin-top:12px">
+            <iframe loading="lazy"
+              src="https://www.google.com/maps?q=Baghdad&output=embed"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+            <span class="pill">☎️ +964 788 020 0999</span>
+            <a class="pill" href="https://www.facebook.com/share/1J6oJHYWDi/" target="_blank" rel="noopener">Facebook</a>
           </div>
         </div>
       </div>
@@ -886,10 +792,7 @@
 
     <div class="footer glass">
       © <span id="year"></span> <span data-i18n="brand">حصن التقنية</span> — <span data-i18n="rights">جميع الحقوق محفوظة</span>
-      <div style="margin-top:8px">
-        <a href="tel:+9647880200999">+964 788 020 0999</a> •
-        <a target="_blank" rel="noopener" href="https://www.facebook.com/share/1J6oJHYWDi/">Facebook</a>
-      </div>
+      • <a href="#top" data-i18n="back_top">رجوع للأعلى</a>
     </div>
   </div>
 
@@ -898,8 +801,8 @@
     <a target="_blank" rel="noopener" id="waFloat" href="#"><span class="ring"></span> <span data-i18n="wa_quick">واتساب سريع</span></a>
   </div>
 
-  <!-- Top -->
-  <button class="toTop" id="toTop" aria-label="Back to top">↑</button>
+  <!-- To Top -->
+  <button class="toTop" id="toTop" title="Top">↑</button>
 
   <!-- Modal -->
   <div class="modal" id="modal">
@@ -918,104 +821,43 @@
   </div>
 
   <script>
+    // ====== CONFIG ======
     const WHATSAPP_NUMBER = "9647880200999";
+    const FACEBOOK_URL = "https://www.facebook.com/share/1J6oJHYWDi/";
 
-    // If you upload your logo to the repo (example: assets/logo.png) put the path here:
-    const BRAND_LOGO_PATH = ""; // e.g. "assets/logo.png"
-
-    // ====== Gallery items (stable images) ======
+    // ====== IMAGE ITEMS (safe hotlinking) ======
     const items = [
-      {cat:"cctv",   t:"تركيب كاميرات خارجية",  tag:"CCTV",        img:"https://picsum.photos/seed/hosn-cctv-1/1200/800"},
-      {cat:"cctv",   t:"غرفة مراقبة احترافية",  tag:"Control",     img:"https://picsum.photos/seed/hosn-cctv-2/1200/800"},
-      {cat:"alarm",  t:"نظام إنذار ذكي",        tag:"Alarm",       img:"https://picsum.photos/seed/hosn-alarm-1/1200/800"},
-      {cat:"network",t:"تنظيم راك وشبكات",      tag:"Network",     img:"https://picsum.photos/seed/hosn-net-1/1200/800"},
-      {cat:"smart",  t:"قفل ذكي للأبواب",       tag:"Smart Home",  img:"https://picsum.photos/seed/hosn-smart-1/1200/800"},
-      {cat:"cctv",   t:"كاميرات داخلية للمنازل", tag:"Indoor",     img:"https://picsum.photos/seed/hosn-cctv-3/1200/800"},
-      {cat:"smart",  t:"تحكم ذكي بالإنارة",     tag:"Automation",  img:"https://picsum.photos/seed/hosn-smart-2/1200/800"},
-      {cat:"network",t:"حلول Wi-Fi للشركات",    tag:"Wi-Fi",       img:"https://picsum.photos/seed/hosn-net-2/1200/800"},
-      {cat:"alarm",  t:"حساسات أبواب ونوافذ",    tag:"Sensors",     img:"https://picsum.photos/seed/hosn-alarm-2/1200/800"}
+      {cat:"cctv", t:"تغطية كاميرات خارجية 360°", tag:"CCTV", img:"https://images.unsplash.com/photo-1580894908361-967195033215?auto=format&fit=crop&w=1400&q=70"},
+      {cat:"alarm", t:"إنذار وحساسات للمنازل", tag:"Alarm", img:"https://images.unsplash.com/photo-1558002038-1055f2b39365?auto=format&fit=crop&w=1400&q=70"},
+      {cat:"network", t:"شبكات وتنظيم راك للشركات", tag:"Network", img:"https://images.unsplash.com/photo-1581092919535-7146f4f1a0b7?auto=format&fit=crop&w=1400&q=70"},
+      {cat:"smart", t:"قفل ذكي للأبواب", tag:"Smart", img:"https://images.unsplash.com/photo-1526040652367-ac003a0475fe?auto=format&fit=crop&w=1400&q=70"},
+      {cat:"cctv", t:"غرفة مراقبة احترافية", tag:"Control", img:"https://images.unsplash.com/photo-1557597774-9d3b4d571bde?auto=format&fit=crop&w=1400&q=70"},
+      {cat:"cctv", t:"كاميرات داخلية للمنازل", tag:"Indoor", img:"https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1400&q=70"},
+      {cat:"network", t:"حلول Wi-Fi للشركات", tag:"Wi-Fi", img:"https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1400&q=70"},
+      {cat:"alarm", t:"حساسات أبواب ونوافذ", tag:"Sensors", img:"https://images.unsplash.com/photo-1580894732444-8ecded7900b1?auto=format&fit=crop&w=1400&q=70"},
+      {cat:"smart", t:"تحكم ذكي بالإنارة", tag:"Automation", img:"https://picsum.photos/seed/hosn-auto/1400/900"}
     ];
 
-    let active = "all";
-    let isEN = false;
+    const featured = [
+      {title_ar:"تغطية كاميرات خارجية", sub_ar:"توزيع نقاط + رؤية ليلية + تطبيق", title_en:"CCTV Coverage", sub_en:"Layout + night vision + mobile app", img: items[0].img},
+      {title_ar:"إنذار وحساسات", sub_ar:"حركة/أبواب/نوافذ + تنبيه فوري", title_en:"Alarm & Sensors", sub_en:"Motion/door/window + instant alerts", img: items[1].img},
+      {title_ar:"شبكات وتنظيم راك", sub_ar:"سويتش/توزيع/تحسين Wi-Fi", title_en:"Network & Rack", sub_en:"Switching + distribution + Wi-Fi improvement", img: items[2].img},
+    ];
 
+    // ====== UTILS ======
     function waLink(text){ return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`; }
-
-    // ===== WhatsApp links =====
-    document.getElementById("waTop").href   = waLink("السلام عليكم، أريد استفسار/عرض سعر من حصن التقنية.");
-    document.getElementById("waFloat").href = waLink("السلام عليكم، أريد عرض سعر من حصن التقنية.");
-    document.getElementById("waTrust").href = waLink("السلام عليكم، أريد تسعير سريع + موعد تقييم داخل بغداد.");
-
-    // ===== Year =====
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // ===== Back to top =====
-    const toTop = document.getElementById("toTop");
-    window.addEventListener("scroll", ()=>{
-      if(window.scrollY > 500) toTop.classList.add("show");
-      else toTop.classList.remove("show");
-    });
-    toTop.addEventListener("click", ()=> window.scrollTo({top:0, behavior:"smooth"}));
-
-    // ===== Logo handling =====
-    (function(){
-      if(!BRAND_LOGO_PATH) return;
-      const img = document.getElementById("brandLogoImg");
-      const svg = document.getElementById("brandLogoSvg");
-      img.src = BRAND_LOGO_PATH;
-      img.onload = ()=>{ img.style.display="block"; if(svg) svg.style.display="none"; };
-      img.onerror = ()=>{ /* keep svg */ };
-    })();
-
-    // ===== Filters =====
-    function renderFilters(){
-      const box = document.getElementById("filters");
-      box.innerHTML = "";
-      const names = isEN
-        ? [["all","All"],["cctv","CCTV"],["alarm","Alarm"],["network","Network"],["smart","Smart Home"]]
-        : [["all","الكل"],["cctv","كاميرات"],["alarm","إنذار"],["network","شبكات"],["smart","منزل ذكي"]];
-      names.forEach(([id,label])=>{
-        const b = document.createElement("button");
-        b.className = "filter" + (active===id ? " active" : "");
-        b.textContent = label;
-        b.onclick = ()=>{ active=id; renderFilters(); renderGallery(); };
-        box.appendChild(b);
-      });
+    function safeImg(img){
+      // add fallback in HTML via onerror already; keep here if needed
+      return img;
     }
 
-    // ===== Gallery =====
-    function renderGallery(){
-      const g = document.getElementById("gallery");
-      g.innerHTML = "";
-      items.filter(it => active==="all" ? true : it.cat===active).forEach(it=>{
-        const d = document.createElement("div");
-        d.className = "work";
-        const title = isEN
-          ? (it.cat==="cctv"?"CCTV Project":it.cat==="alarm"?"Alarm Project":it.cat==="network"?"Network Project":"Smart Home Project")
-          : it.t;
-
-        d.innerHTML = `
-          <img loading="lazy" src="${it.img}" alt="${title}">
-          <div class="overlay">
-            <div class="label">
-              <b>${title}</b>
-              <span>${it.tag}</span>
-            </div>
-          </div>
-        `;
-        d.onclick = ()=> openModal(it.img, title, it.tag);
-        g.appendChild(d);
-      });
-    }
-
-    // ===== Modal =====
+    // ====== MODAL ======
     const modal = document.getElementById("modal");
     const modalImg = document.getElementById("modalImg");
     const modalTitle = document.getElementById("modalTitle");
     const modalTag = document.getElementById("modalTag");
     document.getElementById("modalClose").onclick = ()=> modal.classList.remove("open");
     modal.addEventListener("click",(e)=>{ if(e.target===modal) modal.classList.remove("open"); });
-
     function openModal(img, title, tag){
       modalImg.src = img;
       modalTitle.textContent = title;
@@ -1023,12 +865,12 @@
       modal.classList.add("open");
     }
 
-    // ===== FAQ accordion =====
+    // ====== FAQ toggles ======
     document.querySelectorAll(".faq-item").forEach(item=>{
       item.querySelector(".faq-q").addEventListener("click", ()=> item.classList.toggle("open"));
     });
 
-    // ===== Counter animation =====
+    // ====== COUNTERS ======
     function animateCounters(){
       document.querySelectorAll(".count").forEach(el=>{
         const target = parseInt(el.getAttribute("data-count"),10) || 0;
@@ -1042,7 +884,104 @@
       });
     }
 
-    // ===== Contact WhatsApp send =====
+    // ====== FILTERS + GALLERY ======
+    let active = "all";
+    function renderFilters(){
+      const box = document.getElementById("filters");
+      box.innerHTML = "";
+      const names = isEN ? [
+        ["all","All"],["cctv","CCTV"],["alarm","Alarm"],["network","Network"],["smart","Smart Home"]
+      ] : [
+        ["all","الكل"],["cctv","كاميرات"],["alarm","إنذار"],["network","شبكات"],["smart","منزل ذكي"]
+      ];
+      names.forEach(([id,label])=>{
+        const b = document.createElement("button");
+        b.className = "filter" + (active===id ? " active" : "");
+        b.textContent = label;
+        b.onclick = ()=>{ active = id; renderFilters(); renderGallery(); };
+        box.appendChild(b);
+      });
+    }
+
+    function renderGallery(){
+      const g = document.getElementById("gallery");
+      g.innerHTML = "";
+      items.filter(it => active==="all" ? true : it.cat===active).forEach(it=>{
+        const d = document.createElement("div");
+        d.className = "work";
+        const title = isEN
+          ? (it.cat==="cctv"?"CCTV Project":it.cat==="alarm"?"Alarm Project":it.cat==="network"?"Network Project":"Smart Home Project")
+          : it.t;
+
+        d.innerHTML = `
+          <img loading="lazy" referrerpolicy="no-referrer" src="${safeImg(it.img)}" alt="${title}"
+               onerror="this.src='https://picsum.photos/seed/hosn-fallback-${Math.random().toString(16).slice(2)}/1200/800';">
+          <div class="overlay">
+            <div class="label">
+              <b>${title}</b>
+              <span>${it.tag}</span>
+            </div>
+          </div>
+        `;
+        d.onclick = ()=> openModal(it.img, title, it.tag);
+        g.appendChild(d);
+      });
+    }
+
+    // ====== SLIDER ======
+    let slideIndex = 0;
+    let sliderTimer = null;
+
+    function renderSlider(){
+      const slides = document.getElementById("slides");
+      const dots = document.getElementById("dots");
+      slides.innerHTML = "";
+      dots.innerHTML = "";
+      featured.forEach((s, i)=>{
+        const div = document.createElement("div");
+        div.className = "slide";
+        const title = isEN ? s.title_en : s.title_ar;
+        const sub = isEN ? s.sub_en : s.sub_ar;
+        div.innerHTML = `
+          <img loading="lazy" referrerpolicy="no-referrer" src="${safeImg(s.img)}" alt="${title}"
+               onerror="this.src='https://picsum.photos/seed/hosn-slide-${i}/1400/900';">
+          <div class="cap">
+            <b>${title}</b>
+            <span>${sub}</span>
+          </div>
+        `;
+        slides.appendChild(div);
+
+        const dot = document.createElement("div");
+        dot.className = "dot2" + (i===slideIndex ? " active":"");
+        dot.onclick = ()=> { slideIndex = i; updateSlider(); restartSlider(); };
+        dots.appendChild(dot);
+      });
+      updateSlider();
+    }
+
+    function updateSlider(){
+      const slides = document.getElementById("slides");
+      slides.style.transform = `translateX(${isEN ? (-slideIndex*100) : (slideIndex*100)}%)`;
+      document.querySelectorAll(".dot2").forEach((d,i)=> d.classList.toggle("active", i===slideIndex));
+    }
+
+    function nextSlide(){ slideIndex = (slideIndex+1) % featured.length; updateSlider(); }
+    function prevSlide(){ slideIndex = (slideIndex-1+featured.length) % featured.length; updateSlider(); }
+
+    function restartSlider(){
+      if(sliderTimer) clearInterval(sliderTimer);
+      sliderTimer = setInterval(()=> nextSlide(), 4500);
+    }
+
+    document.getElementById("nextBtn").addEventListener("click", ()=>{ nextSlide(); restartSlider(); });
+    document.getElementById("prevBtn").addEventListener("click", ()=>{ prevSlide(); restartSlider(); });
+
+    // ====== WhatsApp + Footer ======
+    document.getElementById("waTop").href = waLink("السلام عليكم، أريد استفسار/عرض سعر من حصن التقنية.");
+    document.getElementById("waFloat").href = waLink("السلام عليكم، أريد عرض سعر من حصن التقنية.");
+    document.getElementById("year").textContent = new Date().getFullYear();
+
     document.getElementById("sendWa").addEventListener("click", ()=>{
       const name = document.getElementById("name").value.trim();
       const phone = document.getElementById("phone").value.trim();
@@ -1057,77 +996,13 @@
       window.open(waLink(msg), "_blank");
     });
 
-    // ===== Slider =====
-    (function(){
-      const slider = document.getElementById("slider");
-      if(!slider) return;
-
-      const slides = document.getElementById("slides");
-      const total = slides.children.length;
-      const dotsBox = document.getElementById("dots");
-      const prev = document.getElementById("prev");
-      const next = document.getElementById("next");
-      let i = 0;
-      let timer = null;
-
-      function buildDots(){
-        dotsBox.innerHTML = "";
-        for(let k=0;k<total;k++){
-          const d = document.createElement("button");
-          d.className = "dot2" + (k===i ? " active" : "");
-          d.onclick = ()=>{ i=k; render(); restart(); };
-          dotsBox.appendChild(d);
-        }
-      }
-
-      function render(){
-        // rtl: move opposite direction
-        const rtl = document.documentElement.dir === "rtl";
-        slides.style.transform = `translateX(${rtl ? (i*100) : (-i*100)}%)`;
-        [...dotsBox.children].forEach((d,idx)=> d.classList.toggle("active", idx===i));
-      }
-
-      function go(n){
-        i = (n + total) % total;
-        render();
-        restart();
-      }
-
-      function restart(){
-        if(timer) clearInterval(timer);
-        timer = setInterval(()=> go(i+1), 4500);
-      }
-
-      prev.onclick = ()=> go(i-1);
-      next.onclick = ()=> go(i+1);
-
-      // touch swipe
-      let x0=null;
-      slider.addEventListener("touchstart",(e)=>{ x0=e.touches[0].clientX; },{passive:true});
-      slider.addEventListener("touchend",(e)=>{
-        if(x0===null) return;
-        const x1 = e.changedTouches[0].clientX;
-        const dx = x1-x0;
-        const rtl = document.documentElement.dir === "rtl";
-        if(Math.abs(dx) > 40){
-          if(dx > 0) (rtl ? go(i+1) : go(i-1));
-          else (rtl ? go(i-1) : go(i+1));
-        }
-        x0=null;
-      },{passive:true});
-
-      buildDots();
-      render();
-      restart();
-    })();
-
-    // ===== Language =====
+    // ====== LANG ======
+    let isEN = false;
     const dict = {
       ar:{
         brand:"حصن التقنية",
         tagline:"أنظمة أمنية • كاميرات • إنذار • شبكات • بغداد",
-        nav_services:"الخدمات", nav_solutions:"الحلول", nav_featured:"المميزة", nav_projects:"الأعمال", nav_trust:"لماذا نحن",
-        nav_pricing:"الباقات", nav_faq:"أسئلة", nav_contact:"تواصل",
+        nav_services:"الخدمات", nav_solutions:"الحلول", nav_featured:"المميزة", nav_projects:"الأعمال", nav_trust:"لماذا نحن", nav_pricing:"الباقات", nav_faq:"أسئلة", nav_contact:"تواصل",
         facebook:"فيسبوك", whatsapp:"واتساب", call:"اتصال",
         chip1:"تنفيذ احترافي", chip2:"ربط مباشر بالموبايل", chip3:"دعم مستمر", chip4:"داخل بغداد",
         hero_a:"أمان", hero_b:"بمعايير عالمية", hero_c:"داخل بغداد",
@@ -1135,8 +1010,8 @@
         cta_quote:"اطلب عرض سعر مجاني", cta_work:"شوف الأعمال", cta_services:"استعرض الخدمات",
         hours:"الدوام: كل أسبوع عدا الجمعة والسبت", phone:"هاتف:", promise:"تركيب نظيف + شرح كامل",
         stat1:"طلبات تسعير شهرية (تجريبية)", stat2:"استجابة خلال 24 ساعة", stat3:"خيارات جودة متعددة", stat4:"إعدادات أمان وخصوصية",
-        trust1:"عرض واضح قبل التنفيذ", trust2:"تسليم: شرح + إعدادات", trust3:"إعدادات أمان وخصوصية", trust4:"حلول استقرار (PoE/UPS)",
-        wa_quote:"اطلب تسعير واتساب", cta_quote2:"اطلب عرض سعر",
+        mini1:"عرض واضح قبل التنفيذ", mini2:"تسليم: شرح + إعدادات", mini3:"إعدادات أمان وخصوصية", mini4:"حلول استقرار (PoE/UPS)",
+        mini_cta:"اطلب تسعير واتساب", mini_cta2:"شوف الباقات",
         services_title:"خدماتنا", services_sub:"تقييم • تنفيذ • تسليم • دعم — بنفس أسلوب الشركات.",
         s1_t:"كاميرات مراقبة", s1_d:"داخلي/خارجي، رؤية ليلية، تسجيل، ربط موبايل، توزيع نقاط وزوايا مثالية.",
         s2_t:"إنذار وحساسات", s2_d:"حساسات حركة/أبواب/نوافذ، صفارات وتنبيه فوري، دمج مع الكاميرات.",
@@ -1146,31 +1021,27 @@
         solA_t:"تصميم توزيع احترافي", solA_d:"نحدد زوايا الكاميرات ونقاط الضعف حتى تكون التغطية مثالية وتقلل العمى.",
         solB_t:"أمان وخصوصية", solB_d:"ضبط كلمات مرور، صلاحيات، وتحديثات أساسية لتقليل الاختراقات.",
         solC_t:"حلول استقرار", solC_d:"خيارات PoE/UPS حسب الحاجة لتقليل الانقطاع وتحسين الاستمرارية.",
-        clients_t:"عملاؤنا", clients_d:"شعارات تجريبية مؤقتاً — نستبدلها لاحقاً.",
-        featured_t:"مشاريع مميزة", featured_d:"عرض سريع بشكل شركة عالمية — ونبدّل الصور لاحقاً بصور شغلكم الحقيقي.",
-        f1t:"تغطية كاميرات خارجية 360°", f1d:"توزيع نقاط + رؤية ليلية + تطبيق",
-        f2t:"إنذار وحساسات للمنازل", f2d:"حركة/أبواب/نوافذ + تنبيه فوري",
-        f3t:"شبكات وتنظيم راك للشركات", f3d:"سويتش/توزيع/تحسين Wi-Fi",
-        k1t:"تصميم تغطية", k1d:"تقليل النقاط العمياء",
-        k2t:"تسليك نظيف", k2d:"تنفيذ مرتب واحترافي",
-        k3t:"ضبط أمان", k3d:"كلمات مرور + صلاحيات",
-        k4t:"تسليم كامل", k4d:"شرح + إعداد تنبيهات",
+        clients_title:"عملاؤنا", clients_sub:"شعارات تجريبية مؤقتاً — نستبدلها لاحقاً.",
+        featured_title:"مشاريع مميزة", featured_sub:"عرض سريع بشكل شركة عالمية — ونبدّل الصور لاحقاً بصور شغلكم الحقيقي.",
+        k1_t:"تصميم تغطية", k1_d:"تقليل النقاط العمياء",
+        k2_t:"تسليك نظيف", k2_d:"تنفيذ مرتب واحترافي",
+        k3_t:"ضبط أمان", k3_d:"كلمات مرور + صلاحيات",
+        k4_t:"تسليم كامل", k4_d:"شرح + إعداد تنبيهات",
         projects_title:"معرض الأعمال", projects_sub:"صور توضيحية مؤقتاً — نستبدلها بصور مشاريعكم لاحقاً.",
         case_title:"دراسات حالة", case_sub:"نصوص احترافية تزيد الثقة — نحدّثها بأرقام حقيقية لاحقاً.",
         c1_t:"محل تجاري — تغطية كاملة", c1_d:"توزيع نقاط + ضبط تسجيل + ربط هاتف + تنبيه حركة. النتيجة: مراقبة واضحة وتقليل ثغرات.",
         c2_t:"منزل — ربط وتطبيق", c2_d:"كاميرات داخلية وخارجية + إعدادات خصوصية + وصول للعائلة. النتيجة: متابعة سهلة وتنبيهات فورية.",
         c3_t:"شركة — شبكات وتنظيم", c3_d:"تنظيم راك + سويتش + توزيع نقاط + تحسين Wi-Fi. النتيجة: استقرار أعلى وتقليل انقطاع.",
         c_time:"مدة التنفيذ:", c_app:"تطبيق:", c_deliver:"تسليم:",
-        t_t:"آراء العملاء", t_d:"نماذج مؤقتة — نستبدلها بتقييمات حقيقية لاحقاً.",
-        t1:"شغل مرتب وتسليك نظيف، وربطوا التطبيق وشرحوا كلشي. أنصح بيهم.",
-        t2:"تنبيه الحركة مضبوط، والكاميرات واضحة بالليل. استجابة سريعة.",
-        t3:"شبكة الشركة صارت مستقرة، وتنظيم الراكات ممتاز. تسليم احترافي.",
-        t1n:"أبو علي", t1c:"بغداد", t2n:"سارة", t2c:"بغداد", t3n:"م. أحمد", t3c:"شركة",
-        p_t:"طريقة شغلنا", p_d:"خطوات واضحة مثل الشركات: حتى الزبون يطمن.",
-        p1:"1) تقييم الموقع", p1d:"نحدد عدد النقاط والزوايا ونقترح أفضل حل.",
-        p2:"2) عرض سعر واضح", p2d:"تفاصيل الأجهزة والتنفيذ والمدة قبل البدء.",
-        p3:"3) تنفيذ نظيف", p3d:"تسليك منظم، تثبيت مضبوط، واختبارات كاملة.",
-        p4:"4) تسليم ودعم", p4d:"شرح التطبيق + تنبيهات + متابعة بعد التركيب.",
+        t_title:"آراء العملاء", t_sub:"نماذج مؤقتة — نستبدلها بتقييمات حقيقية لاحقاً.",
+        t1:"شغل مرتب وتسليك نظيف، وربطوا التطبيق وشرحوا كلشي. أنصح بيهم.", t1n:"أبو علي", t1c:"بغداد",
+        t2:"تنبيه الحركة مضبوط، والكاميرات واضحة بالليل. استجابة سريعة.", t2n:"سارة", t2c:"بغداد",
+        t3:"شبكة الشركة صارت مستقرة، وتنظيم الراكات ممتاز. تسليم احترافي.", t3n:"م. أحمد", t3c:"شركة",
+        p_title:"طريقة شغلنا", p_sub:"خطوات واضحة مثل الشركات: حتى الزبون يطمن.",
+        p1_t:"1) تقييم الموقع", p1_d:"نحدد عدد النقاط والزوايا ونقترح أفضل حل.",
+        p2_t:"2) عرض سعر واضح", p2_d:"تفاصيل الأجهزة والتنفيذ والمدة قبل البدء.",
+        p3_t:"3) تنفيذ نظيف", p3_d:"تسليك منظم، تثبيت مضبوط، واختبارات كاملة.",
+        p4_t:"4) تسليم ودعم", p4_d:"شرح التطبيق + تنبيهات + متابعة بعد التركيب.",
         pricing_title:"الباقات", pricing_sub:"نماذج تسويقية — السعر النهائي حسب الموقع والاحتياج.",
         pr1_t:"باقة منزل", pr2_t:"باقة محل/شركة", pr3_t:"باقة حماية متقدمة",
         pr_price:"حسب التقييم", pr_cta:"اطلب عرض", best:"الأكثر طلباً",
@@ -1184,23 +1055,24 @@
         fq4_q:"شلون يكون السعر؟", fq4_a:"يعتمد على عدد النقاط ونوع الأجهزة والتسليك. نعطيك عرض واضح قبل التنفيذ.",
         contact_title:"اطلب عرض سعر", contact_sub:"املأ المعلومات — الإرسال يروح واتساب مباشرة.",
         city:"بغداد", send:"إرسال واتساب", call_now:"اتصال الآن", open_fb:"افتح فيسبوك",
-        map_t:"موقع الخدمة", map_d:"نشتغل داخل بغداد. إذا تحب نجي تقييم، أرسل منطقتك على الواتساب.",
-        wa_quick:"واتساب سريع", rights:"جميع الحقوق محفوظة"
+        opt1:"كاميرات مراقبة", opt2:"أنظمة إنذار", opt3:"شبكات واتصالات", opt4:"منزل ذكي",
+        area1:"داخل بغداد", area2:"أطراف بغداد",
+        service_area:"موقع الخدمة", service_area_d:"نشتغل داخل بغداد. إذا تحب نجي تقييم، أرسل منطقتك على الواتساب.",
+        wa_quick:"واتساب سريع", rights:"جميع الحقوق محفوظة", back_top:"رجوع للأعلى"
       },
       en:{
         brand:"Hosn Tech",
         tagline:"Security • CCTV • Alarm • Networks • Baghdad",
-        nav_services:"Services", nav_solutions:"Solutions", nav_featured:"Featured", nav_projects:"Work", nav_trust:"Why Us",
-        nav_pricing:"Packages", nav_faq:"FAQ", nav_contact:"Contact",
+        nav_services:"Services", nav_solutions:"Solutions", nav_featured:"Featured", nav_projects:"Work", nav_trust:"Why Us", nav_pricing:"Packages", nav_faq:"FAQ", nav_contact:"Contact",
         facebook:"Facebook", whatsapp:"WhatsApp", call:"Call",
-        chip1:"Professional delivery", chip2:"Mobile access", chip3:"Ongoing support", chip4:"Baghdad",
+        chip1:"Professional delivery", chip2:"Mobile app access", chip3:"Ongoing support", chip4:"Baghdad",
         hero_a:"Security", hero_b:"Global-Standard", hero_c:"in Baghdad",
         hero_desc:"End-to-end security for homes and businesses: HD/4K CCTV, alarms & sensors, networks, smart home — clean installation and attention to detail.",
         cta_quote:"Get a free quote", cta_work:"View work", cta_services:"Explore services",
         hours:"Hours: weekly except Fri & Sat", phone:"Phone:", promise:"Clean install + full handover",
         stat1:"Monthly quote requests (pilot)", stat2:"Response within 24 hours", stat3:"Multiple quality options", stat4:"Security & privacy settings",
-        trust1:"Clear quote before work", trust2:"Handover: app + settings", trust3:"Security & privacy setup", trust4:"Stability options (PoE/UPS)",
-        wa_quote:"WhatsApp quote", cta_quote2:"Request a quote",
+        mini1:"Clear quote before work", mini2:"Handover: training + settings", mini3:"Security hardening", mini4:"Stability upgrades (PoE/UPS)",
+        mini_cta:"Request WhatsApp quote", mini_cta2:"View packages",
         services_title:"Services", services_sub:"Assess • Install • Handover • Support — company-style delivery.",
         s1_t:"CCTV Surveillance", s1_d:"Indoor/outdoor, night vision, recording, mobile access, optimal camera planning.",
         s2_t:"Alarms & Sensors", s2_d:"Motion/door/window sensors, sirens, instant alerts, can integrate with cameras.",
@@ -1210,60 +1082,60 @@
         solA_t:"Professional layout design", solA_d:"We plan camera angles and weak points to reduce blind spots.",
         solB_t:"Security & privacy", solB_d:"Passwords, permissions, and basic hardening to reduce risks.",
         solC_t:"Stability upgrades", solC_d:"PoE/UPS options to reduce downtime and improve reliability.",
-        clients_t:"Clients", clients_d:"Temporary placeholders — replace with real logos later.",
-        featured_t:"Featured Projects", featured_d:"Enterprise-style showcase — replace with your real work photos later.",
-        f1t:"360° Outdoor CCTV Coverage", f1d:"Layout + night vision + mobile app",
-        f2t:"Smart Alarm & Sensors", f2d:"Motion/doors/windows + instant alerts",
-        f3t:"Business Networks & Rack", f3d:"Switching/distribution/Wi-Fi improvement",
-        k1t:"Coverage Design", k1d:"Reduce blind spots",
-        k2t:"Clean Wiring", k2d:"Neat professional install",
-        k3t:"Security Setup", k3d:"Passwords + permissions",
-        k4t:"Full Handover", k4d:"Walkthrough + alerts",
-        projects_title:"Portfolio", projects_sub:"Temporary images — replace with your real project photos later.",
-        case_title:"Case Studies", case_sub:"Trust-building templates — replace with real numbers later.",
-        c1_t:"Retail — Full coverage", c1_d:"Layout + recording + mobile access + motion alerts. Result: fewer gaps.",
-        c2_t:"Home — App setup", c2_d:"Indoor/outdoor CCTV + privacy settings + family access. Easy monitoring.",
-        c3_t:"Company — Network setup", c3_d:"Rack + switch + distribution + Wi-Fi improvement. More stability.",
+        clients_title:"Clients", clients_sub:"Temporary demo logos — will be replaced later.",
+        featured_title:"Featured Projects", featured_sub:"Company-style showcase — replace later with your real work photos.",
+        k1_t:"Coverage Design", k1_d:"Reduce blind spots",
+        k2_t:"Clean Cabling", k2_d:"Neat professional install",
+        k3_t:"Security Setup", k3_d:"Passwords + permissions",
+        k4_t:"Full Handover", k4_d:"Training + alerts",
+        projects_title:"Portfolio", projects_sub:"Temporary illustrative images — we’ll replace later.",
+        case_title:"Case Studies", case_sub:"Professional copy to build trust — we’ll update with real numbers later.",
+        c1_t:"Retail — Full coverage", c1_d:"Layout + recording + mobile access + motion alerts. Result: clearer monitoring and fewer gaps.",
+        c2_t:"Home — App setup", c2_d:"Indoor/outdoor CCTV + privacy settings + family access. Result: easy monitoring and instant alerts.",
+        c3_t:"Company — Network setup", c3_d:"Rack + switch + distribution + Wi-Fi improvement. Result: higher stability and fewer drops.",
         c_time:"Duration:", c_app:"App:", c_deliver:"Delivery:",
-        t_t:"Testimonials", t_d:"Temporary samples — replace with real Facebook reviews later.",
-        t1:"Clean wiring, professional setup, and clear walkthrough. Highly recommended.",
-        t2:"Motion alerts tuned well and great night quality. Fast response.",
-        t3:"Network became stable and rack organization was excellent. Professional handover.",
-        t1n:"Ali", t1c:"Baghdad", t2n:"Sara", t2c:"Baghdad", t3n:"Eng. Ahmed", t3c:"Company",
-        p_t:"Our Process", p_d:"Clear enterprise-style steps.",
-        p1:"1) Site assessment", p1d:"Plan points and angles and propose the best solution.",
-        p2:"2) Clear quotation", p2d:"Devices, scope, timeline — before starting.",
-        p3:"3) Clean installation", p3d:"Organized wiring, proper mounting, full testing.",
-        p4:"4) Handover & support", p4d:"App setup, alerts, and post-install support.",
-        pricing_title:"Packages", pricing_sub:"Samples — final quote depends on site and scope.",
+        t_title:"Testimonials", t_sub:"Temporary demos — will be replaced later.",
+        t1:"Clean work and neat cabling. App setup and full walkthrough—recommended.", t1n:"Ali", t1c:"Baghdad",
+        t2:"Motion alerts are tuned well, night quality is great. Fast response.", t2n:"Sara", t2c:"Baghdad",
+        t3:"Company network became stable. Excellent rack organization and handover.", t3n:"Eng. Ahmed", t3c:"Business",
+        p_title:"How we work", p_sub:"Clear steps like companies — to build trust.",
+        p1_t:"1) Site assessment", p1_d:"We determine points/angles and propose the best solution.",
+        p2_t:"2) Clear quote", p2_d:"Devices, scope and timeline before we start.",
+        p3_t:"3) Clean installation", p3_d:"Organized cabling, solid mounting and full testing.",
+        p4_t:"4) Handover & support", p4_d:"App training + alerts + follow-up support.",
+        pricing_title:"Packages", pricing_sub:"Marketing samples — final quote depends on site and scope.",
         pr1_t:"Home Package", pr2_t:"Shop/Company Package", pr3_t:"Advanced Protection",
         pr_price:"After assessment", pr_cta:"Request quote", best:"Most requested",
-        pr1_l1:"Site assessment + layout", pr1_l2:"Install + app setup", pr1_l3:"Walkthrough + support",
+        pr1_l1:"Assessment + layout", pr1_l2:"Install + app setup", pr1_l3:"Walkthrough + support",
         pr2_l1:"CCTV + recording", pr2_l2:"Network/rack organization", pr2_l3:"Alerts + mobile access",
         pr3_l1:"Alarms + sensors", pr3_l2:"Security/privacy plan", pr3_l3:"Post-install support",
         faq_title:"Quick FAQ", faq_sub:"Short answers to help customers decide.",
-        fq1_q:"Can I view cameras on my phone?", fq1_a:"Yes. We set up the app, alerts, and provide full instructions.",
+        fq1_q:"Can I view cameras on my phone?", fq1_a:"Yes. We set up the official app, alerts, and give full instructions.",
         fq2_q:"PoE or Wi-Fi?", fq2_a:"PoE is usually more stable; Wi-Fi works when wiring is limited.",
-        fq3_q:"Do you provide maintenance?", fq3_a:"Yes. Support within Baghdad when needed.",
-        fq4_q:"How do you price projects?", fq4_a:"Depends on points, device types and wiring. Clear quote first.",
+        fq3_q:"Do you provide maintenance?", fq3_a:"Yes. Support and follow-up within Baghdad when needed.",
+        fq4_q:"How do you price projects?", fq4_a:"Depends on points, device types and wiring. We provide a clear quote first.",
         contact_title:"Get a quote", contact_sub:"Fill the form — it sends directly to WhatsApp.",
         city:"Baghdad", send:"Send on WhatsApp", call_now:"Call now", open_fb:"Open Facebook",
-        map_t:"Service area", map_d:"We operate in Baghdad. Send your area on WhatsApp to book an assessment.",
-        wa_quick:"Quick WhatsApp", rights:"All rights reserved"
+        opt1:"CCTV", opt2:"Alarm Systems", opt3:"Networks", opt4:"Smart Home",
+        area1:"Baghdad", area2:"Baghdad outskirts",
+        service_area:"Service Area", service_area_d:"We operate in Baghdad. Send your area on WhatsApp for a visit.",
+        wa_quick:"Quick WhatsApp", rights:"All rights reserved", back_top:"Back to top"
       }
     };
 
     function applyLang(){
-      const lang = isEN ? "en" : "ar";
       document.querySelectorAll("[data-i18n]").forEach(el=>{
         const key = el.getAttribute("data-i18n");
-        if(dict[lang][key]) el.textContent = dict[lang][key];
+        const val = dict[isEN ? "en" : "ar"][key];
+        if(val) el.textContent = val;
       });
       document.documentElement.lang = isEN ? "en" : "ar";
-      document.documentElement.dir  = isEN ? "ltr" : "rtl";
+      document.documentElement.dir = isEN ? "ltr" : "rtl";
       document.getElementById("langText").textContent = isEN ? "AR" : "EN";
 
-      // refresh galleries + slider position for direction changes
+      // slider direction fix
+      renderSlider();
+      updateSlider();
       renderFilters();
       renderGallery();
     }
@@ -1271,15 +1143,23 @@
     document.getElementById("langBtn").addEventListener("click", ()=>{
       isEN = !isEN;
       applyLang();
-      // re-render slider position after dir change
-      if(window.__hosnSliderRender) window.__hosnSliderRender();
     });
 
-    // init
+    // ====== Scroll to top button ======
+    const toTop = document.getElementById("toTop");
+    window.addEventListener("scroll", ()=>{
+      if(window.scrollY > 600) toTop.classList.add("show");
+      else toTop.classList.remove("show");
+    });
+    toTop.addEventListener("click", ()=> window.scrollTo({top:0, behavior:"smooth"}));
+
+    // ====== init ======
     renderFilters();
     renderGallery();
-    applyLang();
+    renderSlider();
+    restartSlider();
     animateCounters();
+    applyLang();
   </script>
 </body>
 </html>
